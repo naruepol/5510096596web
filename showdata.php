@@ -29,7 +29,12 @@
 	   setCookie("cname",$username,time()+60);
 	   setCookie("csurname",$surname,time()+60);
 	   setCookie("cuseremail",$useremail,time()+60);
-	   setCookie("cpwd",$pwd,time()+60);	   
+	   setCookie("cpwd",$pwd,time()+60);	
+	   
+	   session_start();
+	   $_SESSION["susername"] = $username;   
+
+	   
 ?> 
 </body>
 </html>
