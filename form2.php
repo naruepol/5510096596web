@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form action="./form.php" method="post">
+<form action="./showdata.php" method="post">
   <p>เพศ :
   <input type="radio" name="gender" value="male" checked> Male
     <input type="radio" name="gender" value="female"> Female<br>
