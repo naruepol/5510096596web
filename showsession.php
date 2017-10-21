@@ -12,7 +12,8 @@
     session_start();
 
     $username = $_SESSION["susername"];
-    echo "Username (session): $username ";   
+    echo "Username (session): $username ";  
+	session_destroy(); 
 	
 	
 ?> 
