@@ -26,13 +26,19 @@
 	      echo "รหัสผ่าน : ".$pwd."<br>";
 	   }	   
          
-	   setCookie("cname",$username,time()+60);
-	   setCookie("csurname",$surname,time()+60);
-	   setCookie("cuseremail",$useremail,time()+60);
-	   setCookie("cpwd",$pwd,time()+60);	
-	   
-	   session_start();
-	   $_SESSION["susername"] = $username;   
+$host = "127.0.0.1";
+$user = "root";
+$passwd = "";
+$dbname = "school";
+
+mysql_connect($host,$user,$passwd) or die ("ติดต่อ Host ไม่ได้");
+mysql_select_db($dbname) or die ("ติดต่อฐานข้อมูลไม่ได้");
+
+$sql = "INSERT INTO student (firstname, lastname, email, password) VALUES
+('$username', '$surname', '$useremail', '$pwd')";
+$sqlquery = mysql_db_query($dbname,$sql);
+print "เพิ่มข้อมูลเรียบร้อย";
+mysql_close(); 
 
 	   
 ?> 

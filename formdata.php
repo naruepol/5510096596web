@@ -22,5 +22,21 @@
   </p>
 </form>
 <br><br>
+<?php
+$host = "127.0.0.1";
+$user = "root";
+$passwd = "";
+$dbname = "school";
+
+mysql_connect($host,$user,$passwd) or die ("ติดต่อ Host ไม่ได้");
+mysql_select_db($dbname) or die ("ติดต่อฐานข้อมูลไม่ได้");
+
+$sql = "select * from student";
+$sqlquery = mysql_db_query($dbname,$sql);
+
+print "จำนวนข้อมูลทั้งหมด ".mysql_num_rows($sqlquery)." คน";
+mysql_close(); 
+
+?>
 </body>
 </html>
